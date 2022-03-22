@@ -2,30 +2,33 @@
 <html lang="en">
 <head>
     <link rel="shortcut icon" href="static/drop.png" type="image/png">
-    <meta name="theme-color" content="#015a8d">
+    <meta name="theme-color" content="#002f63">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PyDrop</title>
+    <link rel="stylesheet" href="static/style.css">
 
 </head>
 <body>
     <div class="container">
 
-        <button id="activate-send" class="main-button" onclick="activateSend()">Send files</button>
-        <button id="activate-recv" class="main-button">Recieve files</button>
+        <button id="activate-send" class="main-button" onclick="activate('send')">Send files</button>
+        <button id="activate-recv" class="main-button" onclick="activate('recieve')">Recieve files</button>
         <img src="static/drop.png" alt="">
-        <form action="/download" target="_blank" method="post" class="file" style="display: none;">
+
+        <form action="/download" target="_blank" method="post" class="file" id="recieve-form" style="display: none;">
             <input hidden type="text" name="downloadfile" id="" placeholder="Enter Filename">
             <button>Choose file</button>
             <input type="submit" value="Download">
         </form>
-        <form action="/upload" target="_blank" method="post" class="file" enctype="multipart/form-data" style="display: none;">
+        <form action="/upload" target="_blank" method="post" class="file" id="send-form" enctype="multipart/form-data" style="display: none;">
             <input type="text" name="downloadfilepath" id="" placeholder="Enter File Path">
             <input type="file" name="uploadfiles[]" id="" multiple>
             <input type="submit" value="Upload">
         </form>
         <button class="ip">GET IP</button>
     </div>
+    <script src="static/script.js"></script>
 </body>
 </html>

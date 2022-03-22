@@ -1,9 +1,15 @@
+:root {
+    --darkest-blue: #002f63;
+    --dark-blue: #054da0;
+    --light-blue: #397ed8;
+}
+
 * {
     margin: 0px;
     padding: 0px;
 }
+
 body {
-    /* background-color: #015a8d; */
     background-color: rgb(0, 0, 0);
 }
 .container {
@@ -55,7 +61,7 @@ body {
 }
 
 .main-button:hover {
-    background-color: cadetblue;
+    background-color: var(--light-blue);
 }
 
 #activate-send {
@@ -79,5 +85,17 @@ body {
 @media screen and (max-width: 800px){
     .ip {
         display: none;
+    }
+}
+
+
+@keyframes grow {
+    0% {
+        transform: scale(0) ;
+    }
+    100% {
+        transform: scale(1) ;
+        height: 80vh;
+        width: 80vw;
     }
 }
