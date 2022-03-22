@@ -7,96 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PyDrop</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-        body {
-            /* background-color: #015a8d; */
-            background-color: rgb(0, 0, 0);
-        }
-        .container {
-            width: 100%;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .container img {
-            height: 50vw;
-            position: fixed;
-            z-index: -1;
-            top: 50vh;
-        }
 
-        .file input, .update input, .update button, .file button {
-            width: 80%;
-            height: 20%;
-            font-family: monospace;
-            font-weight: 600;
-            font-size: 1rem;
-            border: 0;
-        }
-        .file, .update {
-            width: 45vw;
-            height: 35vw;
-            padding: 5vw 0 5vw 0;
-            border-radius: 10px;
-            margin: 10px;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            flex-direction: column;
-            background-color: rgba(35, 35, 35, 1);
-            /* box-shadow: 0px 0px 50px rgb(56, 149, 255); */
-            
-        }
-
-        .main-button {
-            width: 60vw;
-            height: 7vh;
-            font-size: 1.5rem;
-            background-color: rgba(35, 35, 35, 1);
-            border: none;
-            color: white;
-            font-weight: lighter;
-        }
-
-        .main-button:hover {
-            background-color: cadetblue;
-        }
-
-        #activate-send {
-            border-radius: 2vh 2vh 0 0;
-        }
-
-        #activate-recv {
-            border-radius: 0 0 2vh 2vh;
-        }
-
-        @media screen and (min-width: 800px){
-            .container img {
-                height: 90vh;
-                top: 2rem;
-            }
-            .file, .update {
-                display: none;
-            }
-        }
-
-        @media screen and (max-width: 800px){
-            .ip {
-                display: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
 
-        <button id="activate-send" class="main-button">Send files</button>
+        <button id="activate-send" class="main-button" onclick="activateSend()">Send files</button>
         <button id="activate-recv" class="main-button">Recieve files</button>
         <img src="static/drop.png" alt="">
         <form action="/download" target="_blank" method="post" class="file" style="display: none;">
