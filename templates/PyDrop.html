@@ -11,20 +11,22 @@
 
 </head>
 <body>
+    <div id="blur-overlay" style="display: none;" onclick="hideOpened()"></div>
     <div class="container">
 
         <button id="activate-send" class="main-button" onclick="activate('send')">Send files</button>
         <button id="activate-recv" class="main-button" onclick="activate('recieve')">Recieve files</button>
         <img src="static/drop.png" alt="">
 
-        <form action="/download" target="_blank" method="post" class="file" id="recieve-form" style="display: none;">
+        <form action="/download" target="_blank" method="post" class="file" id="recieve-form">
             <input hidden type="text" name="downloadfile" id="" placeholder="Enter Filename">
-            <button>Choose file</button>
+            <button onclick="loadExplorer()">Choose file</button>
             <input type="submit" value="Download">
         </form>
-        <form action="/upload" target="_blank" method="post" class="file" id="send-form" enctype="multipart/form-data" style="display: none;">
-            <input type="text" name="downloadfilepath" id="" placeholder="Enter File Path">
-            <input type="file" name="uploadfiles[]" id="" multiple>
+        <form action="/upload" target="_blank" method="post" class="file" id="send-form" enctype="multipart/form-data">
+            <input type="text" name="downloadfilepath" id="" placeholder="Enter File Path" hidden>
+            <button onclick="loadExplorer()">Choose Destination File Path</button>
+            <input type="file" name="uploadfiles[]"  multiple>
             <input type="submit" value="Upload">
         </form>
         <button class="ip">GET IP</button>
