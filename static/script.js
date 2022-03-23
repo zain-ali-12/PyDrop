@@ -26,3 +26,10 @@ function hideOpened() {
     current.addEventListener("animationend", remClass(current))
     document.getElementById("blur-overlay").style.display = 'none';
 }
+
+function loadExplorer() {
+    
+}
+
+
+
