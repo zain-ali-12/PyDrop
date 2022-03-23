@@ -72,13 +72,22 @@ body {
     border-radius: 0 0 2vh 2vh;
 }
 
-#grow {
+.grow {
     display: flex;
     animation: 0.3s ease 0s 1 normal forwards running grow;
     position: absolute;
     top: 0;
 }
 
+.shrink {
+    animation: 0.3s ease 0s 1 normal forwards running shrink;
+}
+
+#blur-overlay {
+    width: 100vw;
+    height: 90vh;
+    position: absolute;
+}
 
 @media screen and (min-width: 800px){
     .container img {
@@ -105,5 +114,16 @@ body {
         transform: scale(1) ;
         height: 70vh;
         width: 80vw;
+    }
+}
+@keyframes shrink {
+    0% {
+        transform: scale(1) ;
+        height: 70vh;
+        width: 80vw;
+    }
+
+    100% {
+        transform: scale(0) ;
     }
 }
