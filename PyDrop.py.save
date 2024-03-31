@@ -24,7 +24,6 @@ def upload():
     text = request.form['downloadfilepath']
     print(text)
     try:
-        print("CHANGING DIRECTORY NOW")
         os.chdir(rf"/home/zain/Desktop")
         files = request.files.getlist('uploadfiles[]')
         for file in request.files.getlist('uploadfiles[]'):
